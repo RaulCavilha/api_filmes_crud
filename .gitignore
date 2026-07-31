@@ -1,4 +1,14 @@
+# Ignorar ambiente virtual
 venv/
-.env
+env/
+
+# Ignorar arquivos temporários do Python
 __pycache__/
+*.pyc
+
+# Ignorar seu banco de dados local
 *.db
+dadosfilmes.db
+
+# Ignorar variáveis de ambiente (senhas)
+.env
