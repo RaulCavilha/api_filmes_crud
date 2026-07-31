@@ -14,6 +14,9 @@ class Filme(FilmeBase, table=True):
     id: Annotated[int, Field(default=None, index=True, primary_key=True)]
     uuid: Annotated[UUID, Field(default_factory=uuid4, index=True, unique=True)]
 
+class FilmePublic(FilmeBase):
+    uuid: UUID
+
 class FilmePut(FilmeBase):
     ...
 

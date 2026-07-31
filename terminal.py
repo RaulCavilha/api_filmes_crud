@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from database.database import engine, criar_banco_de_dados
 from sqlmodel import Session, select, update
-from models.models import Filme, Usuario, FilmeBase, UsuarioBase
+from modelos.modelos import Filme, Usuario, FilmeBase, UsuarioBase
 from uuid import UUID
 from seguranca import gerar_hash_senha, verificar_senha
 

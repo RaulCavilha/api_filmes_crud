@@ -1,6 +1,6 @@
 from pathlib import Path
 from sqlmodel import Field, SQLModel, create_engine, Session 
-from models.models import Filme, Usuario
+from modelos.modelos import Filme, Usuario
 FILE_PATH = Path("dadosfilmes.db")
 SQLITE_URL = f"sqlite:///{FILE_PATH}"
 CONNECT_ARGS = {"check_same_thread":False}
