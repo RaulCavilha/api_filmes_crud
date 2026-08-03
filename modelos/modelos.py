@@ -42,6 +42,9 @@ class Usuario(UsuarioBase, table=True):
 class UsuarioPublic(UsuarioBase):
     uuid: UUID
 
+class UsuarioPut(UsuarioBase):
+    ...
+
 class UsuarioPatch(SQLModel):
     username: Annotated[str, Field(min_length=10, max_length=30, index=True, unique=True)] | None = None
     senha: Annotated[str, Field(min_length=8, max_length=30)] | None = None
