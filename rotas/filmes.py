@@ -36,8 +36,18 @@ async def adiciona_filme(session: SessionDep, filme: FilmePut):
     return FilmePublic.model_validate(novo_filme)
     
 @router.patch(path="/filmes/{filme_id}", response_model=FilmePublic)
-async def atualiza_filme(session: SessionDep, filme: FilmePatch):
-    ...
+async def atualiza_filme(session: SessionDep, filme: FilmePatch, filme_id: UUID):
+    user_data = filme.model_dump(exclude_unset=True)
+    if querie := session.exec(select(Filme).where(Filme.uuid == filme_id)).first():
+        for chave, valor in user_data.items():
+            setattr(querie, chave, valor)
+        session.add(querie)
+        session.commit()
+        session.refresh(querie)
+        
+        return querie
+    else:
+        raise HTTPException(status_code=404, detail="Livro não encotrado!")
 
 @router.delete(path="/filmes/{filme_id}", response_model=FilmeDelete)
 async def deleta_filme(session: SessionDep, filme_id: UUID):
