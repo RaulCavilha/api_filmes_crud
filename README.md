@@ -1,6 +1,6 @@
 # 🎬 API de Gestão de Filmes
 
-Uma API RESTful desenvolvida em Python para o gerenciamento de um catálogo de filmes e controle de usuários, com persistência de dados.
+Uma API RESTful desenvolvida em Python para o gerenciamento de um catálogo de filmes e controle de usuários.
 
 ## 🚀 Tecnologias Utilizadas
 
